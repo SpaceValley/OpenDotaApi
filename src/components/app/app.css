@@ -1,5 +1,8 @@
 .mainPage{
-    background: gainsboro;
+    background-image: url("../../img/5cca6e8ce223b340e5d4ed144c390a5a4ecb66a8.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;

@@ -1,26 +1,30 @@
 import React from 'react';
 import './heroesPage.css';
-import { Redirect } from 'react-router-dom';
+import Spinner from '../spinner/spinner'
+import HeroesList from '../heroesList/HeroesList'
+import {connect} from "react-redux";
+import * as actions from "../../actions";
 
-const backToLogIn = () =>{
-    return <Redirect to='/'/>;
+
+const HeroesPage  = ({ isLoading, hasData}) =>{
+
+    const spinner = isLoading ? <Spinner/> : null;
+    const content = hasData ? <HeroesList/> : "Sorry, data wasn't recieved";
+        return (
+            <div className='heroesPage'>
+                {spinner}
+                <div className="content text-white">
+                {content}
+                </div>
+            </div>
+        );
 };
 
-const HeroesPage = () =>{
-
-    return (
-        <div className='heroesPage'>
-            <h1>Heroes List</h1>
-            <ul className='list-group'>
-                <li className="list-group-item">Hero 1</li>
-                <li className="list-group-item">Hero 2</li>
-                <li className="list-group-item">Hero 3</li>
-            </ul>
-                <button className='btn btn-primary mt-3'
-                onClick={backToLogIn}>
-                Back To Log In</button>
-        </div>
-    );
+const mapStateToProps = (state) => {
+    return {
+        hasData: state.hasData,
+        isLoading: state.isLoading
+    };
 };
-export default HeroesPage;
 
+export default connect(mapStateToProps, actions)(HeroesPage);

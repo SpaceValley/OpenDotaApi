@@ -6,3 +6,16 @@ form{
     width: 100%;
     padding-top: 50px;
 }
+
+label {
+    margin-right: 210px;
+}
+.loginTitle{
+    width: 290px;
+    text-align:center;
+    color: white;
+}
+.loginBtn{
+    width: 167%;
+    margin-left: -60px;
+}

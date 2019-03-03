@@ -1,18 +1,23 @@
 import React from 'react';
 import './passwordField.css';
+import {connect} from 'react-redux';
+import * as actions from '../../actions';
 
-const PasswordField = () =>{
-    return(
-        <div>
-            <label htmlFor="Password">Password</label>
+
+const PasswordField = ({event, currPass, passFieldUpdate}) => {
+    console.log(currPass);
+    return (
+        <>
             <input type="password"
                    placeholder='Type password'
                    className='form-control passwordInput'
-                   onChange={event =>(event.target.value)}
-                   required
-                   pattern="[A-Za-z0-9_-.]{6,20}"
-            />
-        </div>
+                   onChange={event => passFieldUpdate(event.target.value)}
+                   required/>
+        </>
+
     );
 };
-export default PasswordField;
+
+
+const mapStateToProps = (state) => ({currPass: state.currPass});
+export default connect(mapStateToProps, actions)(PasswordField);
