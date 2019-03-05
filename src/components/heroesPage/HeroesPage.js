@@ -1,21 +1,19 @@
 import React from 'react';
 import './heroesPage.css';
-import Spinner from '../spinner/spinner'
-import HeroesList from '../heroesList/HeroesList'
+import Spinner from '../spinner/spinner';
+import Error from '../Error/Error';
+import HeroesList from '../heroesList/HeroesList';
 import {connect} from "react-redux";
 import * as actions from "../../actions";
 
 
 const HeroesPage  = ({ isLoading, hasData}) =>{
 
-    const spinner = isLoading ? <Spinner/> : null;
-    const content = hasData ? <HeroesList/> : "Sorry, data wasn't recieved";
+    if(isLoading) return <Spinner/>;
+    if(!hasData) return <Error/>;
         return (
             <div className='heroesPage'>
-                {spinner}
-                <div className="content text-white">
-                {content}
-                </div>
+                <HeroesList/>
             </div>
         );
 };

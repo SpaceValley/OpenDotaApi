@@ -1,4 +1,5 @@
 import React from 'react';
+import './HeroesList.css';
 import {connect} from "react-redux";
 import * as actions from "../../actions";
 import history from "../../history";
@@ -12,18 +13,26 @@ const HeroesList  = ({heroes}) =>{
     };
 
     return (
-        <div>
-                <h1 className="text-white">Heroes List</h1>
-                <ul className='list-group'>
-                    <li className="list-group-item text-primary">{heroes[0].localized_name}</li>
-                </ul>
-                <button className='btn btn-primary mt-3'
+        <div className="heroes-list">
+             <button className='btn btn-primary logOut-btn'
                         onClick={(e) => {
                             e.preventDefault();
                             backToLogIn();
                         }}>
                     Log Out
                 </button>
+                <h1 className="text-white text-center mb-5">Heroes List</h1>
+                <ul className='list-group heroes-ul'>
+                    {heroes.map((hero,i) => 
+                    <li key={i} className="list-group-item mx-2 my-2 hero-li">
+                        <img src={`http://api.opendota.com${hero.img}`} className="hero-img" alt={hero.localized_name}/>
+                        <div className="hero-infoWrap">
+                            <p className="hero-name ">{hero.localized_name}</p>
+                            <p className="hero-attack mt-2">{hero.attack_type}</p>
+                        </div>      
+                    </li>)}
+                </ul>
+               
         </div>
     );
 };
