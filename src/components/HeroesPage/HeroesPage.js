@@ -1,8 +1,8 @@
 import React from 'react';
-import './heroesPage.css';
-import Spinner from '../spinner/spinner';
+import './HeroesPage.css';
+import Spinner from '../Spinner/Spinner';
 import Error from '../Error/Error';
-import HeroesList from '../heroesList/HeroesList';
+import HeroesList from '../HeroesList/HeroesList';
 import {connect} from "react-redux";
 import * as actions from "../../actions";
 

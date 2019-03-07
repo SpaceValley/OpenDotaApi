@@ -1,12 +1,12 @@
 {
 "registeredUsers": [
   {
-    "username" : "1",
-    "password" : "1"
+    "username" : "userOne",
+    "password" : "userOne"
   },
   {
-    "username" : "2",
-    "password" : "2"
+    "username" : "userTwo",
+    "password" : "userTwo"
   }
   ]
 }

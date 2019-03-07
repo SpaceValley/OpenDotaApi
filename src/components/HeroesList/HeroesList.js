@@ -27,9 +27,14 @@ const HeroesList  = ({heroes}) =>{
                     <li key={i} className="list-group-item mx-2 my-2 hero-li">
                         <img src={`http://api.opendota.com${hero.img}`} className="hero-img" alt={hero.localized_name}/>
                         <div className="hero-infoWrap">
-                            <p className="hero-name ">{hero.localized_name}</p>
-                            <p className="hero-attack mt-2">{hero.attack_type}</p>
-                        </div>      
+                            <p className="hero-name">{hero.localized_name}</p>
+                            <p className="hero-attack mt-2 mb-0">attack_type :</p>
+                            <p className="hero-attack m-0">{hero.attack_type}</p>
+                            <p className="hero-attack mt-2 mb-0">attack_rate :</p>
+                            <p className="hero-attack m-0">{hero.attack_rate}</p>
+                            <p className="hero-attack mt-2 mb-0">move_speed :</p>
+                            <p className="hero-attack m-0">{hero.move_speed}</p>
+                        </div>
                     </li>)}
                 </ul>
                

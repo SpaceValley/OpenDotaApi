@@ -23,25 +23,23 @@
     color:#007bff;
     border: none;
     border-radius: 3px;
-    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+    width: 30%;
 }
 .hero-li:hover{
     -webkit-box-shadow: 0px 1px 10px 5px rgba(255,255,255,1);
     -moz-box-shadow: 0px 1px 10px 5px rgba(255,255,255,1);
     box-shadow: 0px 1px 10px 5px rgba(255,255,255,1);
-    background-image: linear-gradient(to right, #ba8fdc, #9a6cc4, #784aad, #552896, #2d0080);
+    background-image: linear-gradient(to right,#0200ff,#00deff,#047bde, #160098, #070048);
     color: white;
 }
 
 .hero-infoWrap{
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 20px;
 
 }
 .hero-name{
