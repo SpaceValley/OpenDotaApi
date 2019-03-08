@@ -1,6 +1,7 @@
 .heroes-list{
     padding-top: 10%;
     padding-bottom: 10%;
+    background: #191919;
 }
 .heroes-ul{
     display: flex;
@@ -15,40 +16,52 @@
 .logOut-btn{
     position: absolute;
     top: 2vw;
-    right: 3vw;
+    right: 2vw;
 }
 
 
 .hero-li{
-    color:#007bff;
+    color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    width: 30%;
+    width: 25%;
+    background: black;
+    transition: all .2s ease-in-out;
 }
 .hero-li:hover{
     -webkit-box-shadow: 0px 1px 10px 5px rgba(255,255,255,1);
     -moz-box-shadow: 0px 1px 10px 5px rgba(255,255,255,1);
     box-shadow: 0px 1px 10px 5px rgba(255,255,255,1);
-    background-image: linear-gradient(to right,#0200ff,#00deff,#047bde, #160098, #070048);
-    color: white;
 }
+
+.hero-li:hover .hero-name{
+    color: red;
+}
+
 
 .hero-infoWrap{
     display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 .hero-name{
     padding-bottom: 5px;
-    border-bottom: 1px solid #007bff;
+    border-bottom: 1px solid red;
     margin: 0;
-
 }
 .hero-img{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.stat-wrap{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
