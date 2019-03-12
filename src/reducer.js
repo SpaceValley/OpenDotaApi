@@ -1,3 +1,4 @@
+import * as actions from './constants/index'
 
 const initialState = {
     isLoading: false,
@@ -8,12 +9,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'FETCH_STARTED':
+        case actions.HEROES_REQUEST:
             return {
                 ...state,
                 isLoading: true
             };
-        case 'FETCH_SUCCESS':
+        case actions.HEROES_RECEIVE:
             return {
                 ...state,
                 heroes: action.payload,

@@ -1,6 +1,5 @@
 import React from 'react';
-import Form from '../NewAccForm/Form';
-import './CreateAccount.css';
+import Form from '../library/NewAccForm/Form';
 
 const CreateAccount = () => {
 

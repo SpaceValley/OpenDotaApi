@@ -1,10 +1,8 @@
 import React from 'react';
-import './HeroesPage.css';
 import Spinner from '../Spinner/Spinner';
 import Error from '../Error/Error';
-import HeroesList from '../HeroesList/HeroesList';
-import {connect} from "react-redux";
-import * as actions from "../../actions";
+import HeroesList from '../../containers/HeroesList/HeroesList';
+
 
 
 const HeroesPage  = ({ isLoading, hasData}) =>{
@@ -18,11 +16,4 @@ const HeroesPage  = ({ isLoading, hasData}) =>{
         );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        hasData: state.hasData,
-        isLoading: state.isLoading
-    };
-};
-
-export default connect(mapStateToProps, actions)(HeroesPage);
+export default HeroesPage;

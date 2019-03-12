@@ -1,7 +1,4 @@
 import React from 'react';
-import './HeroesList.css';
-import {connect} from "react-redux";
-import * as actions from "../../actions";
 import history from "../../history";
 
 
@@ -20,10 +17,10 @@ const HeroesList = ({heroes}) => {
                     }}>
                 Log Out
             </button>
-            <h1 className="text-white text-center mb-5">Heroes List</h1>
+            <h1 className="text-white text-center my-5">Heroes List</h1>
             <ul className='list-group heroes-ul'>
                 {heroes.map((hero, i) =>
-                    <li key={i} className="list-group-item mx-2 my-2 hero-li">
+                    <li key={i} className="list-group-item mx-2 my-2 hero-li col-10 offset-1  offset-sm-0 col-sm-5 col-lg-3">
                             <img src={`http://api.opendota.com${hero.img}`} className="hero-img"
                                  alt={hero.localized_name}/>
                             <div>
@@ -38,7 +35,7 @@ const HeroesList = ({heroes}) => {
                                          alt="int"/>
                                     <span className="hero-stat">{hero.base_int} + {hero.int_gain}</span>
                                 </div>
-                                <div className="stat-wrap">
+                                <div className="stat-wrap my-2">
                                     <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_agi.png"
                                          alt="agi"/>
                                     <span className="hero-stat">{hero.base_agi} + {hero.agi_gain}</span>
@@ -56,7 +53,7 @@ const HeroesList = ({heroes}) => {
                                     <span
                                         className="hero-stat">{hero.base_attack_min} - {hero.base_attack_max}</span>
                                 </div>
-                                <div className="stat-wrap">
+                                <div className="stat-wrap my-2">
                                     <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_speed.png"
                                          alt="speed"/>
                                     <span className="hero-stat">{hero.move_speed}</span>
@@ -75,10 +72,5 @@ const HeroesList = ({heroes}) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        heroes: state.heroes
-    };
-};
 
-export default connect(mapStateToProps, actions)(HeroesList);
+export default HeroesList;

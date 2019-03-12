@@ -1,0 +1,2 @@
+export const HEROES_REQUEST = 'HEROES_REQUEST';
+export const HEROES_RECEIVE = 'HEROES_RECEIVE';

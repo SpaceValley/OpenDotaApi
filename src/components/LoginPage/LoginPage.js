@@ -1,9 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import * as actions from '../../actions';
 import history from '../../history';
-import Form from '../Form/Form';
-import './LoginPage.css';
+import Form  from '../../containers/Form/Form';
 
 const LoginPage = () => {
     const register = () => {
@@ -11,7 +8,7 @@ const LoginPage = () => {
     };
     return (
         <div className='loginPage'>
-            <Form/>
+            <Form />
             <div className='mt-3 text-white'>Do not have account yet?</div>
             <button className='btn btn-primary mt-2 createAccBtn' onClick={(e) => {
                 e.preventDefault();
@@ -23,8 +20,5 @@ const LoginPage = () => {
     );
 
 };
-const mapStateToProps = (state) => ({
-   ...state
-});
-export default connect(mapStateToProps, actions)(LoginPage);
+export default LoginPage;
 

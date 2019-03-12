@@ -1,10 +1,7 @@
 import React from 'react';
 import {FormErrors} from './FormErrors';
-import './Form.css';
-import {connect} from "react-redux";
-import * as actions from "../../actions";
-import history from "../../history";
-import registeredUsers from '../../login';
+import history from "../../../history";
+import registeredUsers from '../../../login';
 
 class Form extends React.Component {
     state = {
@@ -109,7 +106,5 @@ class Form extends React.Component {
         );
     }
 }
-const mapStateToProps = (state) => ({
-    ...state
-});
-export default connect(mapStateToProps, actions)(Form);
+
+export default Form;

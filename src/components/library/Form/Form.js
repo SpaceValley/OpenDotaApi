@@ -1,12 +1,9 @@
 import React from 'react';
 import {FormErrors} from './FormErrors';
-import './Form.css';
-import {connect} from "react-redux";
-import * as actions from "../../actions";
-import history from "../../history";
-import registeredUsers from '../../login';
+import history from "../../../history";
+import registeredUsers from '../../../login';
 
-class Form extends React.Component {
+export default class Form extends React.Component {
     state = {
         users: registeredUsers.registeredUsers,
         username: '',
@@ -125,7 +122,3 @@ class Form extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    ...state
-});
-export default connect(mapStateToProps, actions)(Form);

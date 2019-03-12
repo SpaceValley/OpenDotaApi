@@ -1,7 +1,4 @@
 import React from 'react';
-import './Error.css';
-import {connect} from "react-redux";
-import * as actions from "../../actions";
 import history from "../../history";
 
 
@@ -26,10 +23,5 @@ const Error = () =>{
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        ...state
-    };
-};
 
-export default connect(mapStateToProps, actions)(Error);
+export default Error;
